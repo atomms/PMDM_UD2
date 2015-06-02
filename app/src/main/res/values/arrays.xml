@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cursos_ciclos_formativos">
+        <item>Desarrollo de Aplicaciones Multiplataforma (DAM)</item>
+        <item>Desarrollo de Aplicaciones Web (DAW)</item>
+        <item>Doble Titulación DAM+DAW</item>
+        <item>Gestión Comercial y Marketing</item>
+    </string-array>
+    <string-array name="cursos_formación_especializada_anuales">
+        <item>Copywriter</item>
+        <item>Creatividad Publicitaria</item>
+        <item>Dirección de Arte</item>
+        <item>Diseño Gráfico Publicitario y Postproducción Digital</item>
+        <item>Diseño Publicitario en Entornos Multiplataforma</item>
+        <item>Planificación de Medios Publicitarios</item>
+        <item>Publicidad y Marketing Digital</item>
+        <item>Creatividad Publicitaria</item>
+        <item>Creatividad Publicitaria</item>
+        <item>Creatividad Publicitaria</item>
+    </string-array>
+    <string-array name="cursos_formación_especializada_intensivos">
+        <item>Branding Design</item>
+        <item>Branding Digital</item>
+        <item>Cinema 4D</item>
+        <item>Community Manager</item>
+        <item>Creación y Gestión del Branding</item>
+        <item>Eventos On y Off</item>
+        <item>Illustrator</item>
+        <item>Photoshop</item>
+        <item>Regulación de la Publicidad Online</item>
+        <item>SEO, SEM Y SMO para diseñadores</item>
+        <item>Wordpress, diseño profesional de blogs</item>
+    </string-array>
+    <string-array name="cursos_esp_online">
+        <item>3DS Max 2012</item>
+        <item>Adobe Flash CS4</item>
+        <item>Adobe Illustrator CS5</item>
+        <item>CAdobe Indesign CS6</item>
+        <item>Adobe Photoshop CS6</item>
+        <item>Community Manager</item>
+        <item>Cómo posicionar páginas Web</item>
+        <item>Control del Estrés</item>
+        <item>Diseño Web Avanzado</item>
+        <item>Fotografía Creativa</item>
+        <item>Fundamentos de Diseño Gráfico</item>
+        <item>Gestión Administrativa de las Relaciones Laborales</item>
+        <item>Gestión Contable</item>
+        <item>Gestión Fiscal</item>
+        <item>Inteligencia Emocional</item>
+        <item>Marketing y Publicidad en el sector Inmobiliario</item>
+        <item>Planificación Estratégica en Publicidad</item>
+        <item>Programación Web: JavaScript y PHP</item>
+        <item>Programación Web: JavaScript y ASP .NET 3.5 (C#)</item>
+        <item>Programación Web: JavaScript y ASP .NET 3.5 (Visual Basic)</item>
+        <item>Programación Web: servidor (PHP)</item>
+        <item>Redacción Publicitaria Offline y Online</item>
+    </string-array>
+</resources>
