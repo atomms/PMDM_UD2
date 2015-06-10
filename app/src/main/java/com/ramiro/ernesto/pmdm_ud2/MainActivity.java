@@ -1,6 +1,7 @@
 package com.ramiro.ernesto.pmdm_ud2;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,8 +9,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.ramiro.ernesto.pmdm_ud2.adapters.CustomListAdapter;
 import com.ramiro.ernesto.pmdm_ud2.fragments.CourseDetailFragment;
 
 import java.util.ArrayList;
@@ -17,6 +20,11 @@ import java.util.Arrays;
 
 
 public class MainActivity extends Activity {
+
+    // Propiedad de clase pública para identificar los
+    // datos enviados en el Intent a otra Activity.
+    public static final String KEY_INTENT = "item_position";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +60,21 @@ public class MainActivity extends Activity {
         // un adaptador que interprete los datos y lo añada a la vista.
         // A este adaptador le pasamos el contexto actual con this, la
         // interfaz donde se va a mostrar (layout) y la lista de elementos
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, courses);
+
+////        adapter no personalizado
+//        ArrayAdapter<String> adapter =
+//                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, courses);
+
+// Crear adapte customizado con el layout personalizado
+// y datos de los cursos a mostrar
+        CustomListAdapter adapter = new CustomListAdapter(this, R.layout.
+                item_list, courses);
+
         // Por último, asignamos el adaptador creado a la ListView para
         // que automáticamente se muestren los datos al usuario
         courseList.setAdapter(adapter);
+
+//        listener
         courseList.setOnItemClickListener(new AdapterView.
                 OnItemClickListener()
         {
@@ -64,9 +82,13 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int
                     position, long id)
             {
-                CourseDetailFragment courseDetailFragment =
-                        CourseDetailFragment.newInstance(position);
-                courseDetailFragment.show(getFragmentManager(), "");
+
+//                CourseDetailFragment courseDetailFragment =
+//                        CourseDetailFragment.newInstance(position);
+//                courseDetailFragment.show(getFragmentManager(), "");
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra(KEY_INTENT, position);
+                startActivity(intent);
             }
         });
 

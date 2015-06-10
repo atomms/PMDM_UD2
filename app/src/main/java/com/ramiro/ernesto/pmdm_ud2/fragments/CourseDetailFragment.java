@@ -9,6 +9,9 @@ import android.os.Bundle;
 
 import com.ramiro.ernesto.pmdm_ud2.R;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by ernesto on 27/05/15.
  */
@@ -19,6 +22,8 @@ public class CourseDetailFragment extends DialogFragment
     // Posición pulsada en la lista y
     // listener de la opción seleccionada
     private int mPositionPressed;
+    // Título del curso seleccionado
+    private String mCourseTitle;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters. *
@@ -44,6 +49,22 @@ public class CourseDetailFragment extends DialogFragment
         if (getArguments() != null)
         {
             mPositionPressed = getArguments().getInt(ARG_PARAM1);
+
+            // Creamos e inicializamos una nueva variable para
+            // almacenar la lista de cursos que vamos a mostrar
+            // en la lista
+            ArrayList<String> courses = new ArrayList<String>();
+
+            // Obtenemos de los recursos de la aplicación los arrays de
+            // de los diferentes cursos, necesitamos convertirlos a un
+            // tipo lista con Arrays.asList() y lo añadimos a nuestra lista
+            // courses
+            courses.addAll(Arrays.asList(getResources().getStringArray(R.array.cursos_ciclos_formativos)));
+            courses.addAll(Arrays.asList(getResources().getStringArray(R.array.cursos_formación_especializada_anuales)));
+            courses.addAll(Arrays.asList(getResources().getStringArray(R.array.cursos_formación_especializada_intensivos)));
+            courses.addAll(Arrays.asList(getResources().getStringArray(R.array.cursos_esp_online)));
+
+            mCourseTitle = courses.get(mPositionPressed);
         }
     }
     @Override
@@ -57,7 +78,7 @@ public class CourseDetailFragment extends DialogFragment
                         // Título del dialogo
                 .setTitle("Curso ESP!")
                         // Mensaje del dialogo
-                .setMessage("Trabaja en toda Europa con un grado superior!")
+                .setMessage(mCourseTitle)
                         // Botón respuesta positiva
                 .setPositiveButton("OK", new DialogInterface.OnClickListener()
                 {
