@@ -22,11 +22,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-
 public class MainActivity extends Activity {
 
     //
-//getting ready for progress bar dialog
+    //getting ready for progress bar dialog
     private ProgressDialog mProgressDialog;
     private ArrayList<String> courses;
     private ListView courseList;
@@ -139,65 +138,28 @@ public class MainActivity extends Activity {
                 // de los diferentes cursos, necesitamos convertirlos a un
                 // tipo lista con Arrays.asList() y lo añadimos a nuestra lista
                 // courses
-                courses.addAll(Arrays.asList(
-
-                        getResources()
-
-                                .
-
-                                        getStringArray(R.array.
-                                                cursos_ciclos_formativos)
-
-                ));
-                courses.addAll(Arrays.asList(
-
-                        getResources()
-
-                                .
-
-                                        getStringArray(R.array.
-                                                cursos_formación_especializada_anuales)
-
-                ));
-                courses.addAll(Arrays.asList(
-
-                        getResources()
-
-                                .
-
-                                        getStringArray(R.array.
-                                                cursos_formación_especializada_intensivos)
-
-                ));
-                courses.addAll(Arrays.asList(
-
-                        getResources()
-
-                                .
-
-                                        getStringArray(R.array.
-                                                cursos_esp_online)
-
-                ));
+                courses.addAll(Arrays.asList(getResources().getStringArray(R.array.cursos_ciclos_formativos)));
+                courses.addAll(Arrays.asList(getResources().getStringArray(R.array.cursos_formación_especializada_anuales)));
+                courses.addAll(Arrays.asList(getResources().getStringArray(R.array.cursos_formación_especializada_intensivos)));
+                courses.addAll(Arrays.asList(getResources().getStringArray(R.array.cursos_esp_online)));
 
 
                 // Se detiene la ejecución de la aplicación 2 segundos
                 // para que se visualice la ventana de carga
                 Thread.sleep(2000);
-                            }
-            catch (Exception e)
-            {
             }
+
+            catch (Exception e) {
+            }
+
             return courses;
         }
 
         @Override
-        protected void onPostExecute(ArrayList<String> aData)
-        {
+        protected void onPostExecute(ArrayList<String> aData) {
             super.onPostExecute(aData);
 
-            if(aData.size() > 0)
-            {
+            if (aData.size() > 0) {
                 // Si se han cargado los datos correctamente se notifia al usuario
                 Toast.makeText(MainActivity.this, "Cursos cargados", Toast.LENGTH_SHORT).show();
             }
