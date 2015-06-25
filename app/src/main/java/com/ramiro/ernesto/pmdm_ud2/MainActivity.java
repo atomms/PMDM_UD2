@@ -18,6 +18,7 @@ import com.ramiro.ernesto.pmdm_ud2.fragments.CourseDetailFragment;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+//getting ready for progress bar dialog
 
 public class MainActivity extends Activity {
 
@@ -29,7 +30,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         // Indicamos la interfaz de usuario de esta activity
         setContentView(R.layout.activity_main);
