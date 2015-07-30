@@ -24,8 +24,9 @@ btn.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
 
 //obtenemos con get lo puesto con el put
-        int selectedPosition = getIntent().getIntExtra(MainActivity.KEY_INTENT, 0);
+//        int selectedPosition = getIntent().getIntExtra(MainActivity.KEY_INTENT, 0);
 
+        int selectedPosition = getIntent().getIntExtra("myposition", 0);
         CourseDetailFragment courseDetailFragment =
                         CourseDetailFragment.newInstance(selectedPosition);
                 courseDetailFragment.show(getFragmentManager(), "");
@@ -35,6 +36,7 @@ btn.setOnClickListener(new View.OnClickListener() {
 
     }
 });
+
     }
 
 
